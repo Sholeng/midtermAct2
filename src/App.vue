@@ -1,47 +1,41 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <div id="app">
+    <product-list :products="products" />
+    <transition name="fade">
+      <add-product v-if="showAddProduct" @product-added="showAddProduct = false" />
+    </transition>
+    <button @click="showAddProduct = true">Add Product</button>
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
+<script>
+import ProductList from "./components/ProductList.vue";
+import AddProduct from "./components/AddProduct.vue";
+
+export default {
+  name: "App",
+  components: {
+    ProductList,
+    AddProduct,
+  },
+  data() {
+    return {
+      products: [
+        // Initial products data
+      ],
+      showAddProduct: false,
+    };
+  },
+};
+</script>
+
+<style>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
 }
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
