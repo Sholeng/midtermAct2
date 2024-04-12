@@ -18,17 +18,7 @@
                     <th>Price</th>
                 </tr>
             </thead>
-            <tbody>
-            <!-- Table rows for books -->
-                <tr v-for="book in displayBooks" :key="book.id">
-                    <td>{{ book.id }}</td>
-                    <td>{{ book.title }}</td>
-                    <td>{{ book.author }}</td>
-                    <td>{{ book.genre }}</td>
-                    <td>{{ book.price }}</td>
-                    <td><button @click="addToCart(book)">Add To Cart</button></td>
-                </tr>
-            </tbody>
+            
         </table>
     </div>
   </template>
