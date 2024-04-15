@@ -12,7 +12,7 @@
       <table>
             <thead>
                 <tr>
-                    <th>Product ID</th>
+                    <th>Product ID</th> 
                     <th>Product Description</th>
                     <th>Quantity</th>
                     <th>Price</th>
