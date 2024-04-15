@@ -16,7 +16,7 @@
       return {
         newProduct: {
           id: Date.now(),
-          name: "",
+          name: "HEHE",
           description: "",
           price: 0,
         },
