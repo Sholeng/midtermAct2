@@ -16,6 +16,7 @@
                     <th>Product Description</th>
                     <th>Quantity</th>
                     <th>Price</th>
+                    
                 </tr>
             </thead>
             
